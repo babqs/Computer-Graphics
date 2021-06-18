@@ -69,7 +69,7 @@ let median = function () {
             pixel.push(img.getPixel(i, j + 1).red);
             pixel.push(img.getPixel(i + 1, j).red);
             pixel.push(img.getPixel(i + 1, j + 1).red);
-            var gray = med(pixel);
+            var gray = calcMedian(pixel);
 
             img.setPixel(i, j, new RGBColor(gray, gray, gray));
         }
@@ -77,10 +77,14 @@ let median = function () {
     context.putImageData(img.imageData, 0, 0);
 }
 
-let med = function (arr) {
-    const mid = Math.floor(arr.length / 2),
-        nums = [...arr].sort((a, b) => a - b);
-    return nums[mid];
+let calcMedian = function (arr) {
+    var half = Math.floor(arr.length / 2);
+    arr.sort((a, b) => a - b);
+
+    if (arr.length % 2)
+        return arr[half];
+
+    return (arr[half - 1] + arr[half]) / 2.0;
 }
 
 
