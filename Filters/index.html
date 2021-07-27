@@ -15,15 +15,21 @@
 </head>
 
 <body>
-    <!-- <input type="file" id="fileLoader" class="hidden"> -->
+    <input type="file" id="fileLoader" class="btn btn-success" accept="image/png, image/jpeg" multiple />
     <div class="container mx-auto">
         <h1 class="text-center font-sans text-5xl">Image Processing</h1>
         <div class="mb-4 mt-4">
             <button class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded" id="btnLoad">Load Image</button>
             <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnRotate">Rotate
                 Image</button>
-            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMean">Mean</button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnGaussian">Gaussian
+                Blur</button>
             <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMedian">Median</button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMean">Mean</button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMeanGray">Mean Gray
+                Scale</button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnGrayNTSC">Gray Scale
+                NTSC</button>
         </div>
         <div class="flex">
             <div class="w-1/2 p-3 mr-3">
