@@ -4,41 +4,56 @@
 <head>
     <meta name="description" content="First Steps in Image Processing">
     <meta name="keywords" content="Image Processing, Computer Graphics, UENP, JavaScript">
-    <meta name="author" content="Bárbara Quesada Santana">
+    <meta name="author" content="Bárbara Santana & Dairon Juraski">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Processing</title>
 
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="app.js" defer></script>
+    <script src="collectFile.js" defer></script>
 
 </head>
 
 <body>
-    <input type="file" id="fileLoader" class="btn btn-success" accept="image/png, image/jpeg" multiple />
+    <input id="imgInput" class="btn btn-success bg-blue-500" type="file" accept="image/*" />
     <div class="container mx-auto">
         <h1 class="text-center font-sans text-5xl">Image Processing</h1>
         <div class="mb-4 mt-4">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded" id="btnLoad">Load Image</button>
-            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnRotate">Rotate
-                Image</button>
-            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnGaussian">Gaussian
-                Blur</button>
-            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMedian">Median</button>
-            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMean">Mean</button>
-            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMeanGray">Mean Gray
-                Scale</button>
-            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnGrayNTSC">Gray Scale
-                NTSC</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded" id="btnLoad"> Load Image
+            </button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded" id="btnCompare"> Compare
+            </button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnRotate"> Rotate Image
+            </button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnGaussian"> Gaussian Blur
+            </button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMedian"> Median
+            </button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMean"> Mean
+            </button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMeanGray"> Gray
+            </button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnGrayNTSC"> Gray Scale NTSC
+            </button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnMS"> Binarization
+            </button>
+            <button class="bg-blue-400 hover:bg-blue-600 text-white py-1 px-2 rounded" id="btnRS"> Resize
+            </button>
         </div>
         <div class="flex">
             <div class="w-1/2 p-3 mr-3">
-                <h1 class="font-sans text-3xl text-center pb-4">Original</h1>
-                <img id="image" src="images/gray-cat.jpg" class="m-auto" />
+                <h1 class="font-sans text-3xl text-center pb-4"> Original </h1>
+                <!-- <img id="image" src="images/gray-cat.jpg" class="m-auto" /> -->
+                <canvas id="image" class="m-auto"></canvas>
             </div>
             <div class="w-1/2 p-3">
-                <h1 class="font-sans text-3xl text-center pb-4">Canvas</h1>
+                <h1 class="font-sans text-3xl text-center pb-4"> Treated </h1>
                 <canvas id="image-canvas" class="m-auto"></canvas>
+            </div>
+            <div class="w-1/2 p-3">
+                <h1 class="font-sans text-3xl text-center pb-4"> Compare </h1>
+                <canvas id="compare" class="m-auto"></canvas>
             </div>
         </div>
     </div>
