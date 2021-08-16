@@ -1,2 +1,2 @@
 # ComputerGraphics
-Repositório destinado a trabalhos da matéria de computação gráfica.
+Repositório destinado a trabalhos da disciplina de Computação Gráfica.
